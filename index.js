@@ -2,7 +2,17 @@ const path = require('path')
 const express = require("express");
 
 const app = express();
-const port = process.env.PORT || 1337;
+const port = process.env.PORT || 1338;
+
+app.get("/", (req, res) =>
+  //res.status(200).send({ message: `Welcome to BuildABot API. Use /api/parts to get parts` })
+  res.status(200).send(
+    `<h2>Welcome to BuildABot API</h2>
+    <p>Use /api/parts to get robot parts</p>
+    
+    Thanks,<br/>
+    Nishant`)
+);
 
 app.get('/api/parts', (req, res) =>
   res.send({
