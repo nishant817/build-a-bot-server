@@ -2,6 +2,7 @@ const path = require('path')
 const express = require("express");
 
 const app = express();
+const port = process.env.PORT || 1337;
 
 app.get('/api/parts', (req, res) =>
   res.send({
@@ -175,5 +176,5 @@ app.post('/api/sign-in', (req, res) => res.status(200).send());
 
 app.use('/api/images', express.static('images'));
 
-app.listen(8081, () => console.log('Server listening on port 8081!'));
+app.listen(port, () => console.log("Server running at http://localhost:%d", port));
 
